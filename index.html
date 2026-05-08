@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubur Ayam Tabah Hati — Hangat, Gurih, Bikin Nagih</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> 
+    <link rel="icon" href="./img/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cream: { 50: '#FFFDF8', 100: '#FFF9EE', 200: '#FFF3DC', 300: '#FFEBC4', 400: '#FFE0A8', 500: '#FFD580' },
+                        gold: { 300: '#E2C679', 400: '#D4A853', 500: '#C8963E', 600: '#B07D2E', 700: '#8C6324' },
+                        brown: { 100: '#F5EDE4', 200: '#E8D5C0', 300: '#D4B896', 400: '#B8956A', 500: '#8B6F4E', 600: '#6B5238', 700: '#4A3728', 800: '#3D2B1F', 900: '#2C1810' }
+                    },
+                    fontFamily: { poppins: ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins text-brown-700 overflow-x-hidden transition-colors duration-400">
+
+    <!-- ========== NAVBAR ========== -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500" style="background: transparent;">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-600 p-1 flex items-center justify-center shadow-lg group-hover:shadow-yellow-400/30 transition-shadow duration-300">
+                        <img src="img/logo.png" alt="Logo Bubur Ayam" class="w-full h-full object-contain rounded-lg bg-white">
+                    </div>
+                    <span class="text-lg font-bold text-brown-800 dark:text-cream-100 tracking-tight">Tabah<span class="text-gold-500">Hati</span></span>
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="nav-link text-sm font-medium text-brown-600 dark:text-cream-300 hover:text-gold-500 transition-colors duration-300 relative group">Home<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#menu" class="nav-link text-sm font-medium text-brown-600 dark:text-cream-300 hover:text-gold-500 transition-colors duration-300 relative group">Menu<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#keunggulan" class="nav-link text-sm font-medium text-brown-600 dark:text-cream-300 hover:text-gold-500 transition-colors duration-300 relative group">Keunggulan<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#testimoni" class="nav-link text-sm font-medium text-brown-600 dark:text-cream-300 hover:text-gold-500 transition-colors duration-300 relative group">Testimoni<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#lokasi" class="nav-link text-sm font-medium text-brown-600 dark:text-cream-300 hover:text-gold-500 transition-colors duration-300 relative group">Lokasi<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="#kontak" class="nav-link text-sm font-medium text-brown-600 dark:text-cream-300 hover:text-gold-500 transition-colors duration-300 relative group">Kontak<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-300 group-hover:w-full"></span></a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkToggle" class="dm-toggle" title="Toggle Dark Mode" aria-label="Toggle dark mode"></button>
+                    <iconify-icon id="darkIcon" icon="lucide:sun" class="text-gold-500 text-lg hidden lg:block"></iconify-icon>
+
+                    <a href="https://wa.me/6285788491500" target="_blank" class="hidden lg:inline-flex btn-gold px-6 py-2.5 rounded-full text-sm font-semibold items-center gap-2">
+                        <iconify-icon icon="lucide:shopping-bag" class="text-base"></iconify-icon>
+                        Pesan Sekarang
+                    </a>
+                    <button id="mobileToggle" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-cream-100 dark:bg-brown-800 text-brown-700 dark:text-cream-200">
+                        <iconify-icon icon="lucide:menu" class="text-xl"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu mobile-menu-bg fixed top-0 right-0 w-80 h-full bg-cream-50 dark:bg-brown-900 z-[60] shadow-2xl p-8 pt-24">
+        <button id="mobileClose" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl bg-brown-100 dark:bg-brown-800 text-brown-700 dark:text-cream-200">
+            <iconify-icon icon="lucide:x" class="text-xl"></iconify-icon>
+        </button>
+        <div class="flex flex-col gap-6">
+            <a href="#home" class="mobile-link text-lg font-medium text-brown-700 dark:text-cream-200 hover:text-gold-500 transition-colors">Home</a>
+            <a href="#menu" class="mobile-link text-lg font-medium text-brown-700 dark:text-cream-200 hover:text-gold-500 transition-colors">Menu</a>
+            <a href="#keunggulan" class="mobile-link text-lg font-medium text-brown-700 dark:text-cream-200 hover:text-gold-500 transition-colors">Keunggulan</a>
+            <a href="#testimoni" class="mobile-link text-lg font-medium text-brown-700 dark:text-cream-200 hover:text-gold-500 transition-colors">Testimoni</a>
+            <a href="#lokasi" class="mobile-link text-lg font-medium text-brown-700 dark:text-cream-200 hover:text-gold-500 transition-colors">Lokasi</a>
+            <a href="#kontak" class="mobile-link text-lg font-medium text-brown-700 dark:text-cream-200 hover:text-gold-500 transition-colors">Kontak</a>
+            <div class="gradient-line mt-2 mb-2"></div>
+            <!-- Mobile dark toggle -->
+            <div class="flex items-center gap-3">
+                <button id="darkToggleMobile" class="dm-toggle"></button>
+                <span class="text-sm text-brown-500 dark:text-cream-400">Mode Malam</span>
+            </div>
+            <a href="https://wa.me/6285788491500" target="_blank" class="btn-gold px-6 py-3 rounded-full text-sm font-semibold text-center flex items-center justify-center gap-2">
+                <iconify-icon icon="lucide:shopping-bag"></iconify-icon>
+                Pesan Sekarang
+            </a>
+        </div>
+    </div>
+    <div id="mobileOverlay" class="fixed inset-0 bg-black/40 z-[55] hidden"></div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cream-50 via-cream-100 to-cream-200">
+        <div class="sunlight"></div>
+        <div class="sunlight-2"></div>
+        <div class="ornament-dot" style="top:20%;left:8%"></div>
+        <div class="ornament-dot" style="top:35%;left:5%;width:4px;height:4px"></div>
+        <div class="ornament-dot" style="top:15%;left:12%;width:8px;height:8px;opacity:0.15"></div>
+        <div class="ornament-dot" style="bottom:25%;right:6%"></div>
+        <div class="ornament-dot" style="bottom:40%;right:4%;width:4px;height:4px"></div>
+        <div class="ornament-dot" style="top:60%;left:15%;width:5px;height:5px;opacity:0.2"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full pt-28 pb-20">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <div class="relative z-10 order-2 lg:order-1">
+                    <div class="flex flex-wrap gap-3 mb-8 fade-up">
+                        <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-600 text-xs font-semibold badge-pulse">
+                            <iconify-icon icon="lucide:award" class="text-sm"></iconify-icon>
+                            Best Seller
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 text-xs font-semibold">
+                            <iconify-icon icon="lucide:leaf" class="text-sm"></iconify-icon>
+                            Fresh Every Morning
+                        </span>
+                    </div>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-brown-900 dark:text-cream-100 leading-[1.05] tracking-tight mb-6 fade-up" style="transition-delay:0.1s">
+                        Bubur Ayam<br>
+                        <span class="bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-clip-text text-transparent">Tabah Hati</span>
+                    </h1>
+                    <p class="text-lg lg:text-xl text-brown-500 dark:text-brown-300 leading-relaxed mb-10 max-w-lg fade-up" style="transition-delay:0.2s">
+                        Bubur ayam hangat dengan cita rasa khas yang lembut, gurih, dan bikin nagih. Dibuat dengan cinta setiap harinya.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-12 fade-up" style="transition-delay:0.3s">
+                        <a href="https://wa.me/6285788491500" target="_blank" class="btn-gold px-8 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2.5">
+                            <iconify-icon icon="lucide:shopping-bag" class="text-lg"></iconify-icon>
+                            Pesan Sekarang
+                        </a>
+                        <a href="#menu" class="btn-outline-gold px-8 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2.5">
+                            <iconify-icon icon="lucide:book-open" class="text-lg"></iconify-icon>
+                            Lihat Menu
+                        </a>
+                    </div>
+                    <div class="flex gap-8 fade-up" style="transition-delay:0.4s">
+                        <div>
+                            <div class="text-3xl font-bold text-brown-800 dark:text-cream-100">10K+</div>
+                            <div class="text-sm text-brown-400">Pelanggan Puas</div>
+                        </div>
+                        <div class="w-px bg-brown-200 dark:bg-brown-700"></div>
+                        <div>
+                            <div class="text-3xl font-bold text-brown-800 dark:text-cream-100">4.9</div>
+                            <div class="text-sm text-brown-400 flex items-center gap-1">
+                                <iconify-icon icon="lucide:star" class="text-gold-400"></iconify-icon>
+                                Rating
+                            </div>
+                        </div>
+                        <div class="w-px bg-brown-200 dark:bg-brown-700"></div>
+                        <div>
+                            <div class="text-3xl font-bold text-brown-800 dark:text-cream-100">19+</div>
+                            <div class="text-sm text-brown-400">Tahun Berdiri</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative z-10 order-1 lg:order-2 flex justify-center fade-right" style="transition-delay:0.3s">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold-400/30 to-cream-300/40 rounded-full blur-3xl scale-75"></div>
+                        <div class="float-anim relative">
+                            <img src="./img/ChatGPT Image 2 Mei 2026, 10.21.53.png" alt="Bubur Ayam Tabah Hati" class="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px] object-cover rounded-[3rem] shadow-2xl shadow-brown-900/10 border-4 border-white/60">
+                            <div class="absolute -left-8 sm:-left-12 top-1/4 glass rounded-2xl p-3 sm:p-4 shadow-xl float-anim-delay">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-gold-400/15 flex items-center justify-center">
+                                        <iconify-icon icon="lucide:flame" class="text-gold-500 text-xl"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-brown-400">Dimasak</div>
+                                        <div class="text-sm font-bold text-brown-800 dark:text-cream-200">Fresh Daily</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute -right-6 sm:-right-10 bottom-1/4 glass rounded-2xl p-3 sm:p-4 shadow-xl float-anim">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-green-400/15 flex items-center justify-center">
+                                        <iconify-icon icon="lucide:heart" class="text-green-500 text-xl"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-brown-400">Disukai</div>
+                                        <div class="text-sm font-bold text-brown-800 dark:text-cream-200">10K+ Orang</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+            <span class="text-xs text-brown-400 font-medium">Scroll Down</span>
+            <div class="scroll-indicator">
+                <iconify-icon icon="lucide:chevron-down" class="text-brown-400 text-xl"></iconify-icon>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== KEUNGGULAN SECTION ========== -->
+    <section id="keunggulan" class="py-24 lg:py-32 bg-cream-100 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gold-400/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-up">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-600 text-xs font-semibold mb-4">
+                    <iconify-icon icon="lucide:sparkles" class="text-sm"></iconify-icon>
+                    KEUNGGULAN KAMI
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brown-900 dark:text-cream-100 tracking-tight mt-4 mb-6">
+                    Kenapa Harus<br>
+                    <span class="bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">Bubur Ayam Tabah Hati?</span>
+                </h2>
+                <p class="text-brown-400 dark:text-brown-300 text-lg max-w-2xl mx-auto">
+                    Kami berkomitmen menghadirkan bubur ayam terbaik dengan bahan berkualitas dan pelayanan terbaik untuk Anda.
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-premium bg-white dark:bg-brown-800 rounded-3xl p-8 shadow-lg shadow-brown-900/5 border border-cream-200/50 dark:border-brown-700/50 fade-up" style="transition-delay:0.1s">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-400/15 to-gold-500/10 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:truck" class="text-gold-500 text-3xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-brown-800 dark:text-cream-100 mb-3">Gratis Ongkir</h3>
+                    <p class="text-brown-400 dark:text-brown-300 text-sm leading-relaxed">Nikmati pengiriman gratis untuk area tertentu dengan minimal pembelian.</p>
+                </div>
+                <div class="card-premium bg-white dark:bg-brown-800 rounded-3xl p-8 shadow-lg shadow-brown-900/5 border border-cream-200/50 dark:border-brown-700/50 fade-up" style="transition-delay:0.2s">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-400/15 to-green-500/10 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:wallet" class="text-green-500 text-3xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-brown-800 dark:text-cream-100 mb-3">Harga Terjangkau</h3>
+                    <p class="text-brown-400 dark:text-brown-300 text-sm leading-relaxed">Porsi mengenyangkan dengan harga ramah di kantong mulai dari Rp 7.000 untuk semua kalangan.</p>
+                </div>
+                <div class="card-premium bg-white dark:bg-brown-800 rounded-3xl p-8 shadow-lg shadow-brown-900/5 border border-cream-200/50 dark:border-brown-700/50 fade-up" style="transition-delay:0.3s">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-400/15 to-orange-500/10 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:salad" class="text-orange-500 text-3xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-brown-800 dark:text-cream-100 mb-3">Bahan Fresh</h3>
+                    <p class="text-brown-400 dark:text-brown-300 text-sm leading-relaxed">Menggunakan ayam dan bahan pilihan yang selalu fresh setiap hari.</p>
+                </div>
+                <div class="card-premium bg-white dark:bg-brown-800 rounded-3xl p-8 shadow-lg shadow-brown-900/5 border border-cream-200/50 dark:border-brown-700/50 fade-up" style="transition-delay:0.4s">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400/15 to-blue-500/10 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:shield-check" class="text-blue-500 text-3xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-brown-800 dark:text-cream-100 mb-3">Cepat & Higienis</h3>
+                    <p class="text-brown-400 dark:text-brown-300 text-sm leading-relaxed">Proses penyajian cepat, bersih, dan higienis untuk kenyamanan Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MENU SECTION ========== -->
+    <section id="menu" class="py-24 lg:py-32 bg-cream-50 relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-gold-400/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-up">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-600 text-xs font-semibold mb-4">
+                    <iconify-icon icon="lucide:utensils" class="text-sm"></iconify-icon>
+                    MENU KAMI
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brown-900 dark:text-cream-100 tracking-tight mt-4 mb-6">
+                    Pilih Porsi<br>
+                    <span class="bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">Favorit Kamu</span>
+                </h2>
+                <p class="text-brown-400 dark:text-brown-300 text-lg max-w-2xl mx-auto">
+                    Tersedia dalam tiga ukuran porsi — sesuai selera dan nafsu makan Anda. Semua dimasak dengan resep khas yang sama-lezatnya!
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- REGULER -->
+                <div class="card-premium bg-white dark:bg-brown-800 rounded-3xl overflow-hidden shadow-lg shadow-brown-900/5 border border-cream-200/50 dark:border-brown-700/50 fade-up" style="transition-delay:0.1s">
+                    <div class="menu-img-wrap relative">
+                        <img src="./img/bubur5.png" alt="Bubur Ayam Reguler" class="w-full h-56 object-cover">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xs font-semibold text-brown-600 shadow-sm inline-flex items-center gap-1">
+                            <iconify-icon icon="lucide:cup-soda" class="text-sm"></iconify-icon>
+                            Reguler
+                        </span>
+                    </div>
+                    <div class="p-7">
+                        <h3 class="text-xl font-bold text-brown-800 dark:text-cream-100 mb-2">Bubur Ayam Reguler</h3>
+                        <p class="text-brown-400 dark:text-brown-300 text-sm mb-5 leading-relaxed">Porsi kecil pas untuk anak bayi dan sarapan ringan. Bubur lembut dengan ayam suwir, bawang goreng, dan kuah gurih yang nikmat.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Ayam suwir segar</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Bawang goreng renyah</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Daun bawang</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Kuah gurih khas</li>
+                        </ul>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gold-500">Rp 5K</span>
+                            <a href="https://wa.me/6285788491500?text=Halo%2C%20saya%20mau%20pesan%20Bubur%20Ayam%20Reguler" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-1.5">
+                                <iconify-icon icon="lucide:plus"></iconify-icon>Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MEDIUM -->
+                <div class="card-premium card-popular bg-white dark:bg-brown-800 rounded-3xl overflow-hidden shadow-xl shadow-gold-400/10 fade-up relative" style="transition-delay:0.2s">
+                    <div class="absolute top-0 right-0 z-10">
+                        <div class="bg-gradient-to-l from-gold-400 to-gold-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl rounded-tr-3xl shadow-lg inline-flex items-center gap-1">
+                            <iconify-icon icon="lucide:crown" class="text-sm"></iconify-icon>
+                            Paling Laris
+                        </div>
+                    </div>
+                    <div class="menu-img-wrap relative">
+                        <img src="./img/bubur7.png" alt="Bubur Ayam Medium" class="w-full h-56 object-cover">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold-400/90 backdrop-blur-sm text-xs font-semibold text-white shadow-sm inline-flex items-center gap-1">
+                            <iconify-icon icon="lucide:beef" class="text-sm"></iconify-icon>
+                            Medium
+                        </span>
+                    </div>
+                    <div class="p-7">
+                        <h3 class="text-xl font-bold text-brown-800 dark:text-cream-100 mb-2">Bubur Ayam Medium</h3>
+                        <p class="text-brown-400 dark:text-brown-300 text-sm mb-5 leading-relaxed">Porsi lebih banyak dan pas untuk sarapan yang mengenyangkan. Bubur lembut dengan topping melimpah dan kuah gurih yang bikin nagih.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Ayam suwir segar lebih banyak</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Bawang goreng renyah</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Daun bawang</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Kuah gurih khas</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Kerupuk bebas refil</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Porsi lebih besar</li>
+                        </ul>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gold-500">Rp 7K</span>
+                            <a href="https://wa.me/6285788491500?text=Halo%2C%20saya%20mau%20pesan%20Bubur%20Ayam%20Medium" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-1.5">
+                                <iconify-icon icon="lucide:plus"></iconify-icon>Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LARGE -->
+                <div class="card-premium bg-white dark:bg-brown-800 rounded-3xl overflow-hidden shadow-lg shadow-brown-900/5 border border-cream-200/50 dark:border-brown-700/50 fade-up" style="transition-delay:0.3s">
+                    <div class="menu-img-wrap relative">
+                        <img src="./img/bubur10.png" alt="Bubur Ayam Large" class="w-full h-56 object-cover">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xs font-semibold text-red-500 shadow-sm inline-flex items-center gap-1">
+                            <iconify-icon icon="lucide:flame" class="text-sm"></iconify-icon>
+                            Large
+                        </span>
+                    </div>
+                    <div class="p-7">
+                        <h3 class="text-xl font-bold text-brown-800 dark:text-cream-100 mb-2">Bubur Ayam Large</h3>
+                        <p class="text-brown-400 dark:text-brown-300 text-sm mb-5 leading-relaxed">Porsi lebih besar untuk makan lebih puas dan kenyang lebih lama. Bubur lembut dengan ayam lebih melimpah dan kuah gurih khas.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Ayam suwir segar lebih banyak</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Bawang goreng renyah</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Daun bawang</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Kuah gurih khas</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Kerupuk bebas refil</li>
+                            <li class="flex items-center gap-2 text-sm text-brown-500 dark:text-brown-300"><iconify-icon icon="lucide:check" class="text-gold-500 text-base"></iconify-icon>Porsi lebih besar</li>
+                        </ul>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gold-500">Rp 10K</span>
+                            <a href="https://wa.me/6285788491500?text=Halo%2C%20saya%20mau%20pesan%20Bubur%20Ayam%20Large" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-1.5">
+                                <iconify-icon icon="lucide:plus"></iconify-icon>Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-14 fade-up">
+                <a href="https://wa.me/6285788491500" target="_blank" class="btn-outline-gold px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2.5">
+                    Pesan via WhatsApp
+                    <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONI SECTION — REDESIGNED ========== -->
+    <section id="testimoni" class="py-24 lg:py-32 bg-cream-100 relative overflow-hidden">
+        <div class="absolute top-1/2 right-0 w-72 h-72 bg-gold-400/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-up">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-600 text-xs font-semibold mb-4">
+                    <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                    TESTIMONI
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brown-900 dark:text-cream-100 tracking-tight mt-4 mb-6">
+                    Kata Mereka<br>
+                    <span class="bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">Tentang Kami</span>
+                </h2>
+                <p class="text-brown-400 dark:text-brown-300 text-lg max-w-2xl mx-auto">
+                    Dengarkan pengalaman pelanggan setia yang sudah merasakan kelezatan Bubur Ayam Tabah Hati.
+                </p>
+            </div>
+
+            <!-- Slider -->
+            <div class="relative fade-up">
+                <div class="overflow-hidden rounded-3xl">
+                    <div id="sliderTrack" class="slider-track flex">
+
+                        <!-- Slide 1 -->
+                        <div class="w-full flex-shrink-0 px-1">
+                            <div class="grid md:grid-cols-3 gap-6">
+
+                                <!-- Card 1 -->
+                                <div class="testi-card">
+                                    <div class="testi-photo-wrap">
+                                        <img src="img/plgn.jpeg" alt="Rina Susanti">
+                                        <div class="testi-photo-overlay"></div>
+                                        <div class="testi-name-badge">
+                                            <div>
+                                                <div class="font-bold text-white text-sm drop-shadow-md">Rina Susanti</div>
+                                                <div class="text-white/70 text-xs">Pelanggan Setia</div>
+                                            </div>
+                                            <div class="flex gap-0.5">
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="testi-body">
+                                        <span class="quote-icon">"</span>
+                                        <p class="text-brown-500 dark:text-brown-300 text-sm leading-relaxed">Bubur ayam terenak yang pernah saya coba! Porsinya banyak, rasanya gurih, dan bahan-bahannya segar banget. Pasti order lagi!</p>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2 -->
+                                <div class="testi-card">
+                                    <div class="testi-photo-wrap">
+                                        <img src="https://picsum.photos/seed/person2b/400/300.jpg" alt="Andi Pratama">
+                                        <div class="testi-photo-overlay"></div>
+                                        <div class="testi-name-badge">
+                                            <div>
+                                                <div class="font-bold text-white text-sm drop-shadow-md">Andi Pratama</div>
+                                                <div class="text-white/70 text-xs">Food Blogger</div>
+                                            </div>
+                                            <div class="flex gap-0.5">
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="testi-body">
+                                        <span class="quote-icon">"</span>
+                                        <p class="text-brown-500 dark:text-brown-300 text-sm leading-relaxed">Deliverynya cepat dan makanannya sampai masih hangat. Bubur ayam mediumnya juara! Recommended banget buat sarapan.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Card 3 -->
+                                <div class="testi-card">
+                                    <div class="testi-photo-wrap">
+                                        <img src="https://picsum.photos/seed/person3c/400/300.jpg" alt="Maya Dewi">
+                                        <div class="testi-photo-overlay"></div>
+                                        <div class="testi-name-badge">
+                                            <div>
+                                                <div class="font-bold text-white text-sm drop-shadow-md">Maya Dewi</div>
+                                                <div class="text-white/70 text-xs">Ibu Rumah Tangga</div>
+                                            </div>
+                                            <div class="flex gap-0.5">
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="testi-body">
+                                        <span class="quote-icon">"</span>
+                                        <p class="text-brown-500 dark:text-brown-300 text-sm leading-relaxed">Harganya affordable tapi kualitasnya premium. Saya dan keluarga selalu pesan yang large setiap weekend. Anak-anak juga suka!</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="w-full flex-shrink-0 px-1">
+                            <div class="grid md:grid-cols-3 gap-6">
+
+                                <!-- Card 4 -->
+                                <div class="testi-card">
+                                    <div class="testi-photo-wrap">
+                                        <img src="https://picsum.photos/seed/person4d/400/300.jpg" alt="Budi Santoso">
+                                        <div class="testi-photo-overlay"></div>
+                                        <div class="testi-name-badge">
+                                            <div>
+                                                <div class="font-bold text-white text-sm drop-shadow-md">Budi Santoso</div>
+                                                <div class="text-white/70 text-xs">Karyawan Swasta</div>
+                                            </div>
+                                            <div class="flex gap-0.5">
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="testi-body">
+                                        <span class="quote-icon">"</span>
+                                        <p class="text-brown-500 dark:text-brown-300 text-sm leading-relaxed">Bubur cekernya luar biasa! Ceker empuk dan kuahnya meresap. Ini tempat bubur ayam favorit saya se-Lampung.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Card 5 -->
+                                <div class="testi-card">
+                                    <div class="testi-photo-wrap">
+                                        <img src="https://picsum.photos/seed/person5e/400/300.jpg" alt="Sari Wulandari">
+                                        <div class="testi-photo-overlay"></div>
+                                        <div class="testi-name-badge">
+                                            <div>
+                                                <div class="font-bold text-white text-sm drop-shadow-md">Sari Wulandari</div>
+                                                <div class="text-white/70 text-xs">Mahasiswa</div>
+                                            </div>
+                                            <div class="flex gap-0.5">
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="testi-body">
+                                        <span class="quote-icon">"</span>
+                                        <p class="text-brown-500 dark:text-brown-300 text-sm leading-relaxed">Setiap pagi selalu pesan di sini. Porsinya konsisten, rasanya tidak pernah berubah. Cocok banget buat sarapan mahasiswa!</p>
+                                    </div>
+                                </div>
+
+                                <!-- Card 6 -->
+                                <div class="testi-card">
+                                    <div class="testi-photo-wrap">
+                                        <img src="https://picsum.photos/seed/person6f/400/300.jpg" alt="Dimas Prayoga">
+                                        <div class="testi-photo-overlay"></div>
+                                        <div class="testi-name-badge">
+                                            <div>
+                                                <div class="font-bold text-white text-sm drop-shadow-md">Dimas Prayoga</div>
+                                                <div class="text-white/70 text-xs">Wiraswasta</div>
+                                            </div>
+                                            <div class="flex gap-0.5">
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                                <iconify-icon icon="lucide:star" class="star text-sm"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="testi-body">
+                                        <span class="quote-icon">"</span>
+                                        <p class="text-brown-500 dark:text-brown-300 text-sm leading-relaxed">Pelayanannya ramah, tempatnya bersih, dan buburnya super enak. Salah satu kuliner terbaik di Bandar Lampung!</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="flex items-center justify-center gap-4 mt-10">
+                    <button id="prevBtn" class="w-12 h-12 rounded-full border-2 border-gold-400/30 text-gold-500 flex items-center justify-center hover:bg-gold-400 hover:text-white transition-all duration-300">
+                        <iconify-icon icon="lucide:chevron-left" class="text-xl"></iconify-icon>
+                    </button>
+                    <div class="flex gap-2 items-center">
+                        <div class="slider-dot w-6 h-3 rounded-full bg-gold-400 transition-all duration-300 cursor-pointer"></div>
+                        <div class="slider-dot w-3 h-3 rounded-full bg-gold-400/30 transition-all duration-300 cursor-pointer"></div>
+                    </div>
+                    <button id="nextBtn" class="w-12 h-12 rounded-full border-2 border-gold-400/30 text-gold-500 flex items-center justify-center hover:bg-gold-400 hover:text-white transition-all duration-300">
+                        <iconify-icon icon="lucide:chevron-right" class="text-xl"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LOKASI SECTION ========== -->
+    <section id="lokasi" class="py-24 lg:py-32 bg-cream-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-up">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-600 text-xs font-semibold mb-4">
+                    <iconify-icon icon="lucide:map-pin" class="text-sm"></iconify-icon>
+                    LOKASI
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brown-900 dark:text-cream-100 tracking-tight mt-4 mb-6 leading-tight">
+                    Kunjungi
+                    <span class="block mt-2 bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">Kedai Kami</span>
+                </h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-10 items-stretch">
+                <div class="fade-left rounded-3xl overflow-hidden shadow-xl shadow-brown-900/8 border border-cream-200/50 dark:border-brown-700/50 h-[400px] lg:h-auto">
+                    <iframe src="https://maps.google.com/maps?q=Jl.%20Ikan%20Tenggiri,%20Pesawahan,%20Kec.%20Telukbetung%20Selatan,%20Kota%20Bandar%20Lampung,%20Lampung%2035142&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; min-height:400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full"></iframe>
+                </div>
+                <div class="fade-right flex flex-col gap-6">
+                    <div class="bg-white dark:bg-brown-800 rounded-3xl p-8 shadow-lg shadow-brown-900/5 border border-cream-200/50 dark:border-brown-700/50 card-premium">
+                        <div class="flex items-start gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400/15 to-gold-500/10 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:map-pin" class="text-gold-500 text-2xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-brown-800 dark:text-cream-100 mb-1">Alamat</h3>
+                                <p class="text-brown-400 dark:text-brown-300 text-sm leading-relaxed">Jl. Ikan Tenggiri, Pesawahan, Kec. Telukbetung Selatan, Kota Bandar Lampung, Lampung 35142</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-brown-800 rounded-3xl p-8 shadow-lg shadow-brown-900/5 border border-cream-200/50 dark:border-brown-700/50 card-premium">
+                        <div class="flex items-start gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400/15 to-green-500/10 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:clock" class="text-green-500 text-2xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-brown-800 dark:text-cream-100 mb-1">Jam Buka</h3>
+                                <p class="text-brown-400 dark:text-brown-300 text-sm">Senin - Jumat: 06.00 - 12.00 WIB</p>
+                                <p class="text-brown-400 dark:text-brown-300 text-sm">Sabtu - Minggu: 06.00 - 11.00 WIB</p>
+                                <div class="inline-flex items-center gap-1.5 mt-2 px-3 py-1 rounded-full bg-green-500/10 text-green-600 text-xs font-semibold">
+                                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                    Buka Sekarang
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-brown-800 rounded-3xl p-8 shadow-lg shadow-brown-900/5 border border-cream-200/50 dark:border-brown-700/50 card-premium">
+                        <div class="flex items-start gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400/15 to-blue-500/10 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:phone" class="text-blue-500 text-2xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-brown-800 dark:text-cream-100 mb-1">Hubungi Kami</h3>
+                                <p class="text-brown-400 dark:text-brown-300 text-sm">WhatsApp: +62 857-8849-1500</p>
+                                <p class="text-brown-400 dark:text-brown-300 text-sm">Email: asnaba93@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285788491500" target="_blank" class="btn-gold px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-3 shadow-lg">
+                        <iconify-icon icon="lucide:message-circle" class="text-xl"></iconify-icon>
+                        Chat via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA BANNER ========== -->
+    <section class="py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #2C1810 0%, #4A3728 50%, #3D2B1F 100%);">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-gold-400 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-gold-400 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 fade-up">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6">
+                Siap Menikmati Kelezatan<br>
+                <span class="bg-gradient-to-r from-gold-300 to-gold-500 bg-clip-text text-transparent">Bubur Ayam Tabah Hati?</span>
+            </h2>
+            <p class="text-cream-300/80 text-lg mb-10 max-w-2xl mx-auto">Pesan sekarang dan rasakan kehangatan bubur ayam yang dibuat sepenuh hati. Tersedia delivery dan dine-in!</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="https://wa.me/6285788491500" target="_blank" class="btn-gold px-10 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2.5">
+                    <iconify-icon icon="lucide:shopping-bag" class="text-lg"></iconify-icon>
+                    Pesan Sekarang
+                </a>
+                <a href="#menu" class="px-10 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2.5 border-2 border-gold-400/30 text-gold-400 hover:bg-gold-400/10 transition-all duration-300">
+                    <iconify-icon icon="lucide:book-open" class="text-lg"></iconify-icon>
+                    Lihat Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="kontak" class="relative overflow-hidden" style="background: linear-gradient(180deg, #1A0F0A 0%, #2C1810 100%);">
+        <div class="gradient-line"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center shadow-lg">
+                            <iconify-icon icon="lucide:soup" class="text-white text-xl"></iconify-icon>
+                        </div>
+                        <span class="text-lg font-bold text-white tracking-tight">Tabah<span class="text-gold-400">Hati</span></span>
+                    </div>
+                    <p class="text-cream-300/50 text-sm leading-relaxed mb-6">Bubur ayam hangat dengan rasa khas yang dibuat sepenuh hati setiap hari.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="social-icon w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cream-300/60 hover:text-gold-400 hover:border-gold-400/30 hover:bg-gold-400/10 transition-all duration-300">
+                            <iconify-icon icon="lucide:instagram" class="text-lg"></iconify-icon>
+                        </a>
+                        <a href="https://www.tiktok.com/@buburayamtbhti" target="_blank" class="social-icon w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cream-300/60 hover:text-gold-400 hover:border-gold-400/30 hover:bg-gold-400/10 transition-all duration-300">
+                            <iconify-icon icon="lucide:music-2" class="text-lg"></iconify-icon>
+                        </a>
+                        <a href="https://wa.me/6285788491500" target="_blank" class="social-icon w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cream-300/60 hover:text-gold-400 hover:border-gold-400/30 hover:bg-gold-400/10 transition-all duration-300">
+                            <iconify-icon icon="lucide:message-circle" class="text-lg"></iconify-icon>
+                        </a>
+                        <a href="#" class="social-icon w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cream-300/60 hover:text-gold-400 hover:border-gold-400/30 hover:bg-gold-400/10 transition-all duration-300">
+                            <iconify-icon icon="lucide:facebook" class="text-lg"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-6">Menu Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-cream-300/50 text-sm hover:text-gold-400 transition-colors duration-300 flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-gold-400/40 group-hover:bg-gold-400 transition-colors"></span>Home</a></li>
+                        <li><a href="#menu" class="text-cream-300/50 text-sm hover:text-gold-400 transition-colors duration-300 flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-gold-400/40 group-hover:bg-gold-400 transition-colors"></span>Menu</a></li>
+                        <li><a href="#testimoni" class="text-cream-300/50 text-sm hover:text-gold-400 transition-colors duration-300 flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-gold-400/40 group-hover:bg-gold-400 transition-colors"></span>Testimoni</a></li>
+                        <li><a href="#kontak" class="text-cream-300/50 text-sm hover:text-gold-400 transition-colors duration-300 flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-gold-400/40 group-hover:bg-gold-400 transition-colors"></span>Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-6">Kontak</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:message-circle" class="text-gold-400 text-lg mt-0.5 flex-shrink-0"></iconify-icon>
+                            <span class="text-cream-300/50 text-sm">+62 857-8849-1500</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:map-pin" class="text-gold-400 text-lg mt-0.5 flex-shrink-0"></iconify-icon>
+                            <span class="text-cream-300/50 text-sm">Jl. Ikan Tenggiri, Pesawahan, Kec. Telukbetung Selatan, Kota Bandar Lampung</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:mail" class="text-gold-400 text-lg mt-0.5 flex-shrink-0"></iconify-icon>
+                            <span class="text-cream-300/50 text-sm">asnaba93@gmail.com</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:clock" class="text-gold-400 text-lg mt-0.5 flex-shrink-0"></iconify-icon>
+                            <div class="text-cream-300/50 text-sm">
+                                <p>Sen-Jum: 06.00 - 12.00</p>
+                                <p>Sab-Min: 06.00 - 11.00</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-6">Newsletter</h4>
+                    <p class="text-cream-300/50 text-sm mb-5 leading-relaxed">Dapatkan info promo dan menu terbaru langsung ke email Anda.</p>
+                    <form id="newsletterForm" class="flex flex-col gap-3">
+                        <input type="email" id="newsletterEmail" placeholder="Email Anda..." class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm placeholder-cream-300/30 focus:outline-none focus:border-gold-400/50 focus:bg-white/10 transition-all duration-300" required>
+                        <button type="submit" class="btn-gold px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+                            <iconify-icon icon="lucide:send" class="text-sm"></iconify-icon>
+                            Subscribe
+                        </button>
+                    </form>
+                    <div id="newsletterMsg" class="mt-3 text-sm hidden"></div>
+                </div>
+            </div>
+            <div class="gradient-line mb-8"></div>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-cream-300/30 text-sm">&copy; 2026 Bubur Ayam Tabah Hati. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-cream-300/30 text-sm hover:text-gold-400 transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-cream-300/30 text-sm hover:text-gold-400 transition-colors duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== FLOATING WHATSAPP ========== -->
+    <a href="https://wa.me/6285788491500" target="_blank" class="wa-float fixed bottom-6 right-6 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center text-white z-50 hover:bg-green-600 transition-colors duration-300">
+        <iconify-icon icon="lucide:message-circle" class="text-2xl"></iconify-icon>
+    </a>
+
+    <!-- ========== TOAST ========== -->
+    <div id="toast" class="fixed top-24 right-6 z-[70] transform translate-x-[120%] transition-transform duration-500 ease-out">
+        <div class="bg-white dark:bg-brown-800 rounded-2xl shadow-xl shadow-brown-900/10 border border-cream-200/50 p-4 flex items-center gap-3 max-w-xs">
+            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                <iconify-icon icon="lucide:check-circle" class="text-green-500 text-xl"></iconify-icon>
+            </div>
+            <div>
+                <div class="text-sm font-semibold text-brown-800 dark:text-cream-100" id="toastTitle">Berhasil!</div>
+                <div class="text-xs text-brown-400" id="toastMsg">Pesan terkirim</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== JAVASCRIPT ========== -->
+  <script src="js/script.js"></script>
+</body>
+</html>
