@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://buburayamtbht.my.id/sitemap.xml
